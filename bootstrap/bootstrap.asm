@@ -64,10 +64,10 @@ MBR:
             mov es, ax
             mov bx, 0h
             mov ah, 02h ;功能：Read Sectors From Drive
-            mov cl, 01h ;要读取的扇区个数Sectors To Read Count
+            mov al, 01h ;要读取的扇区个数Sectors To Read Count
             mov ch, 0h  ;柱面Cylinder
             mov dh, 0h  ;磁头Head
-            mov al, 02h ;扇区Sector
+            mov cl, 02h ;扇区Sector
             mov dl, 0h  ;设备Drive，1st floppy disk ( "drive A:" )
             int 13h
 
@@ -81,6 +81,7 @@ MBR:
 
 
         End:
+            jmp 08200h
             hlt
     data:
         hello:
