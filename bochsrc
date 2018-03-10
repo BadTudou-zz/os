@@ -1,0 +1,13 @@
+megs: 512
+romimage: file=/usr/local/Cellar/bochs/2.6.9_1/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/local/Cellar/bochs/2.6.9_1/share/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=bootstrap/floppy.img, status=inserted
+# created with bximage
+ata0-master: type=disk, path="minix.img", mode=flat, cylinders=4161, heads=16, spt=63
+ata0-slave:  type=cdrom, path=minix_R3.3.0-588a35b.iso, status=inserted
+boot: floppy
+log: bochsout.txt
+vga:update_freq=10
+mouse: enabled=0
+
+#ne2k: ioaddr=0x300, irq=9, mac=b0:c4:20:00:00:00, ethmod=fbsd, ethdev=en0
